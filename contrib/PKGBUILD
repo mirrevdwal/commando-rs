@@ -1,0 +1,36 @@
+# Maintainer: Mirre van der Wal <mirrevanderwal@gmail.com>
+pkgname=commando-rs-git
+pkgver=r1.0f5b09c
+pkgrel=1
+epoch=
+pkgdesc="A prompt for custom commands"
+arch=('x86_64')
+url="https://github.com/mirrevdwal/commando-rs"
+license=('MIT' 'APACHE')
+groups=()
+depends=()
+makedepends=('cargo')
+checkdepends=()
+optdepends=()
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("${pkgname%-git}::git+ssh://git@github.com/mirrevdwal/commando-rs.git")
+noextract=()
+md5sums=('SKIP')
+validpgpkeys=()
+
+pkgver() {
+    cd "$srcdir/${pkgname%-git}"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+    cargo build --release
+    install -Dm0755 "target/release/commando" "$pkgdir/usr/bin/commando"
+}
