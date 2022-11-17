@@ -13,6 +13,23 @@ Installing can be done by cloning the project and running `makepkg -i` on the `P
 For other distributions, the package can be built from source by running `cargo build --release`.
 After this, the binary can be found at `target/release/commando`.
 
+## Configuration
+
+Configuration for Commando can be found in `$XDG_CONFIG_HOME/commando/`.
+
+Commands can be defined in Commando toml-files. These can be placed in `$XDG_CONFIG_HOME/commando/commandos/`, or any of your additional `$XDG_CONFIG_DIRS/commando/commandos/`.
+Below you find an example of such a toml-file.
+
+```
+[[commands]]
+name: "Power off"
+command: "systemctl poweroff"
+
+[[commands]]
+name: "Suspend"
+command: "systemctl suspend"
+```
+
 ## Contributing
 
 You can contribute to this project by filing an [issue](https://github.com/mirrevdwal/commando-rs/issues) or opening a [pull request](https://github.com/mirrevdwal/commando-rs/pulls).
