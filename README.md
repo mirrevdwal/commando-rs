@@ -16,3 +16,10 @@ After this, the binary can be found at `target/release/commando`.
 ## Contributing
 
 You can contribute to this project by filing an [issue](https://github.com/mirrevdwal/commando-rs/issues) or opening a [pull request](https://github.com/mirrevdwal/commando-rs/pulls).
+
+## Licensing
+
+Licensed under either of [Apache Licence](LICENSE-APACHE), Version 2.0 or [MIT License](LICENSE-MIT) at your option.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in Commando by you,
+as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
